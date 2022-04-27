@@ -1,65 +1,42 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:music_player/screens/home/drawer.dart';
 import 'package:music_player/screens/home/play_list.dart';
 import 'package:music_player/screens/home/recently_list.dart';
 import 'package:music_player/screens/home/recommend_list.dart';
 import 'package:sizer/sizer.dart';
 
-import 'package:flutter_svg/flutter_svg.dart';
+import 'burger_menu.dart';
 
-import '../main/main_ui.dart';
-
-Widget homeUI() {
-  return Scaffold(
-    backgroundColor: const Color(0xff181b2c),
-    resizeToAvoidBottomInset: false,
-    body: Padding(
-      padding: EdgeInsets.only(top: 7.h),
-      child: SingleChildScrollView(
-        child: Column(
-          mainAxisSize: MainAxisSize.max,
-          children: [
-            Row(
-              children: [
-                _burgerMenu(),
-                _searchBar(),
-              ],
-            ),
-            _recommendText(),
-            SizedBox(
-                width: double.maxFinite, height: 30.h, child: recommendList()),
-            _divider(),
-            _playListText(),
-            SizedBox(width: double.maxFinite, height: 27.h, child: playList()),
-            _divider(),
-            _recentlyPlayedText(),
-            SizedBox(child: recentlyPlayedList()),
-          ],
-        ),
-      ),
-    ),
-  );
-}
-
-Widget _burgerMenu() => Padding(
-      padding: EdgeInsets.only(right: 10.w),
-      child: Column(
-        children: [
-          Padding(
-            padding: EdgeInsets.only(left: 2.0.w),
-            child: InkWell(
-              onTap: () {
-                scaffoldKey.currentState?.openDrawer();
-              },
-              child: SvgPicture.asset(
-                'assets/images/burger_menu.svg',
-                allowDrawingOutsideViewBox: true,
-                fit: BoxFit.fill,
+Widget homeUI() => Scaffold(
+      backgroundColor: const Color(0xff181b2c),
+      resizeToAvoidBottomInset: false,
+      body: Padding(
+        padding: EdgeInsets.only(top: 7.h),
+        child: SingleChildScrollView(
+          child: Column(
+            mainAxisSize: MainAxisSize.max,
+            children: [
+              Stack(
+                children: [
+                  createBurgerMenu(),
+                  _searchBar(),
+                ],
               ),
-            ),
-          )
-        ],
+              _recommendText(),
+              SizedBox(
+                  width: double.maxFinite,
+                  height: 30.h,
+                  child: recommendList()),
+              _divider(),
+              _playListText(),
+              SizedBox(
+                  width: double.maxFinite, height: 27.h, child: playList()),
+              _divider(),
+              _recentlyPlayedText(),
+              SizedBox(child: recentlyPlayedList()),
+            ],
+          ),
+        ),
       ),
     );
 

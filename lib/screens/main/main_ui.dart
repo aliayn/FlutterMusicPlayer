@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:music_player/screens/home/drawer.dart';
 import 'package:music_player/screens/home/home_page.dart';
 import 'package:music_player/screens/main/custom_nav_bar_item.dart';
+import 'package:music_player/screens/settings/setting_page.dart';
 import 'package:persistent_bottom_nav_bar/persistent-tab-view.dart';
 
 PersistentTabController _controller = PersistentTabController(initialIndex: 0);
@@ -13,7 +14,7 @@ Widget mainUI(BuildContext context) {
       builder: (BuildContext context, StateSetter setState) => Scaffold(
             key: scaffoldKey,
             drawer: createDrawer(),
-            body: PersistentTabView.custom(
+            bottomNavigationBar: PersistentTabView.custom(
               context,
               itemCount: _navBarsItems().length,
               screens: _buildScreens(),
@@ -35,7 +36,7 @@ List<Widget> _buildScreens() {
   return [
     const HomePage(),
     const HomePage(),
-    const HomePage(),
+    const SettingsPage(),
   ];
 }
 
