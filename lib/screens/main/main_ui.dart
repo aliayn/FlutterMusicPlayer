@@ -1,10 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:music_player/screens/home/drawer.dart';
 import 'package:music_player/screens/home/home_page.dart';
 import 'package:music_player/screens/main/custom_nav_bar_item.dart';
-import 'package:music_player/screens/settings/setting_page.dart';
 import 'package:persistent_bottom_nav_bar/persistent-tab-view.dart';
+
+import '../../widgets/drawer.dart';
+import '../settings/setting_page.dart';
+import '../songs/songs_page.dart';
 
 PersistentTabController _controller = PersistentTabController(initialIndex: 0);
 final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
@@ -35,7 +37,7 @@ Widget mainUI(BuildContext context) {
 List<Widget> _buildScreens() {
   return [
     const HomePage(),
-    const HomePage(),
+    const SongPage(),
     const SettingsPage(),
   ];
 }

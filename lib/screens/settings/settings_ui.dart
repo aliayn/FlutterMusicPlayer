@@ -4,7 +4,7 @@ import 'package:sizer/sizer.dart';
 
 import 'package:flutter_svg/flutter_svg.dart';
 
-import '../home/burger_menu.dart';
+import '../../widgets/burger_menu.dart';
 
 Widget settingsUI() => Scaffold(
       backgroundColor: const Color(0xff181b2c),

@@ -5,7 +5,7 @@ import 'package:music_player/screens/home/recently_list.dart';
 import 'package:music_player/screens/home/recommend_list.dart';
 import 'package:sizer/sizer.dart';
 
-import 'burger_menu.dart';
+import '../../widgets/burger_menu.dart';
 
 Widget homeUI() => Scaffold(
       backgroundColor: const Color(0xff181b2c),

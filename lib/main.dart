@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:music_player/routes/routes.dart';
 import 'package:music_player/services/app_service.dart';
+import 'package:sizer/sizer.dart';
 
 void main() {
   AppService.init();
@@ -19,10 +20,12 @@ class App extends StatelessWidget {
       statusBarIconBrightness: Brightness.dark,
     ));
 
-    return GetMaterialApp(
-      debugShowCheckedModeBanner: false,
-      getPages: AppPages.routes,
-      initialRoute: AppPages.initial,
+    return Sizer(
+      builder: ((context, orientation, deviceType) => GetMaterialApp(
+            debugShowCheckedModeBanner: false,
+            getPages: AppPages.routes,
+            initialRoute: AppPages.initial,
+          )),
     );
   }
 }
