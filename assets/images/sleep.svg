@@ -1,0 +1,18 @@
+<svg id="_003-stopwatch" data-name="003-stopwatch" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="17.516" height="21" viewBox="0 0 17.516 21">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#ed8770"/>
+      <stop offset="1" stop-color="#d9519d"/>
+    </linearGradient>
+  </defs>
+  <g id="Group_2193" data-name="Group 2193" transform="translate(6.138)">
+    <g id="Group_2192" data-name="Group 2192">
+      <path id="Path_68465" data-name="Path 68465" d="M191.935,0V1.752h1.752v.876a5.873,5.873,0,0,1,1.752,0V1.752h1.752V0Z" transform="translate(-191.935)" fill="url(#linear-gradient)"/>
+    </g>
+  </g>
+  <g id="Group_2195" data-name="Group 2195" transform="translate(0 2.015)">
+    <g id="Group_2194" data-name="Group 2194">
+      <path id="Path_68466" data-name="Path 68466" d="M57.154,52.833l.613-.613.7.7,1.226-1.226-2.628-2.628L55.84,50.293l.7.7-.788.788a8.67,8.67,0,1,0,1.4,1.051ZM51.2,65.359a6.131,6.131,0,0,1,0-12.263v6.131h6.131A6.093,6.093,0,0,1,51.2,65.359Z" transform="translate(-42.432 -49.067)" fill="url(#linear-gradient)"/>
+    </g>
+  </g>
+</svg>
