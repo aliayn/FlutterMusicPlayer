@@ -1,58 +1,52 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
 import 'package:get/instance_manager.dart';
 
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:music_player/controllers/songs/songs_controller.dart';
 import 'package:sizer/sizer.dart';
 
-import '../../controllers/home/home_controller.dart';
+var _homeController = Get.find<SongsController>();
 
-var _homeController = Get.find<HomeController>();
-
-Widget recentlyPlayedList() {
-  return Padding(
-    padding: EdgeInsets.only(top: 2.0.h),
-    child: ListView.builder(
-        shrinkWrap: true,
-        physics: const NeverScrollableScrollPhysics(),
-        itemCount: _homeController.getRecentlyPlayListItemsCount(),
-        itemBuilder: (BuildContext context, int position) {
-          switch (position) {
-            case 0:
-              return _createItem("Bilie Jean", "Micheal Jackson");
-            case 1:
-              return _createItem("Earth Song", "Micheal Jackson");
-            case 2:
-              return _createItem("Mirror", "Justin Timberlake");
-            case 3:
-              return _createItem("Remember the Time", "Micheal Jackson");
-          }
-          return _createItem("Bilie Jean", "Micheal Jackson");
-        }),
-  );
+Widget songsList() {
+  return ListView.builder(
+      shrinkWrap: true,
+      physics: const NeverScrollableScrollPhysics(),
+      itemCount: _homeController.getPlayListItemsCount(),
+      itemBuilder: (BuildContext context, int position) =>
+          _getWidgetByPos(position));
 }
 
-Widget _createItem(String title, String content) {
+Widget _createItem(String cover, String title, String content) {
   return Padding(
     padding: EdgeInsets.only(bottom: 1.h),
     child: Stack(
       children: [
-        _play(),
+        _cover(cover),
         _albumData(title, content),
         _divider(),
-        _heart(),
-        _ratingStar()
+        _play(),
       ],
     ),
   );
 }
 
-Widget _play() => Align(
+Widget _cover(String cover) => Align(
     alignment: Alignment.centerLeft,
     child: Padding(
-      padding: EdgeInsets.only(left: 2.0.w, top: 1.h),
+      padding: EdgeInsets.only(left: 2.0.w, top: 2.h),
+      child: SizedBox(
+        width: 5.h,
+        height: 5.h,
+        child: Image.asset(cover),
+      ),
+    ));
+
+Widget _play() => Align(
+    alignment: Alignment.centerRight,
+    child: Padding(
+      padding: EdgeInsets.only(right: 2.0.w, top: 1.h),
       child: SizedBox(
           width: 5.h,
           height: 5.h,
@@ -61,35 +55,6 @@ Widget _play() => Align(
             fit: BoxFit.none,
           )),
     ));
-
-Widget _heart() => Align(
-    alignment: Alignment.topRight,
-    child: Padding(
-      padding: EdgeInsets.only(right: 14.w, top: 1.h),
-      child: SizedBox(
-          width: 1.h,
-          height: 1.h,
-          child: Icon(
-            Icons.favorite_border_outlined,
-            color: Colors.red,
-            size: 2.h,
-          )),
-    ));
-
-Widget _ratingStar() => Align(
-      alignment: Alignment.centerRight,
-      child: Padding(
-        padding: EdgeInsets.only(right: 3.0.w, top: 4.h, bottom: 1.h),
-        child: RatingBar.builder(
-            initialRating: 3,
-            itemSize: 2.h,
-            itemBuilder: (context, _) => const Icon(
-                  Icons.star,
-                  color: Colors.amber,
-                ),
-            onRatingUpdate: (rate) {}),
-      ),
-    );
 
 Widget _albumData(String title, String content) => Align(
       alignment: Alignment.centerLeft,
@@ -155,3 +120,49 @@ Widget _divider() => Positioned(
         ),
       ),
     );
+
+Widget _getWidgetByPos(int position) {
+  switch (position) {
+    case 0:
+      return _createItem(
+        "assets/images/bilie.png",
+        "Bilie Jean",
+        "Micheal Jackson",
+      );
+    case 1:
+      return _createItem(
+        "assets/images/earth.png",
+        "Be the girl",
+        "Bebe Rexa",
+      );
+    case 2:
+      return _createItem(
+        "assets/images/countryman.png",
+        "Countryman",
+        "Daughtry",
+      );
+    case 3:
+      return _createItem(
+        "assets/images/lonelyness.png",
+        "Do yiu believe in Ionelyness",
+        "Marc Anthony",
+      );
+    case 4:
+      return _createItem(
+        "assets/images/earth.png",
+        "Earth song",
+        "Micheal Jackson",
+      );
+    case 5:
+      return _createItem(
+        "assets/images/smooth.png",
+        "Smooth criminal",
+        "Micheal Jackson",
+      );
+  }
+  return _createItem(
+    "assets/images/bilie.png",
+    "Bilie Jean",
+    "Micheal Jackson",
+  );
+}

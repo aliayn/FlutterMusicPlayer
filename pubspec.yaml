@@ -20,6 +20,7 @@ dependencies:
   flutter_rating_bar: ^4.0.0
   line_awesome_flutter: ^2.0.0
   persistent_bottom_nav_bar: any
+  syncfusion_flutter_gauges: ^20.1.51
 
 dev_dependencies:
   flutter_test:
