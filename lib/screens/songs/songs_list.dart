@@ -7,13 +7,13 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:music_player/controllers/songs/songs_controller.dart';
 import 'package:sizer/sizer.dart';
 
-var _homeController = Get.find<SongsController>();
+var _songsController = Get.find<SongsController>();
 
 Widget songsList() {
   return ListView.builder(
       shrinkWrap: true,
       physics: const NeverScrollableScrollPhysics(),
-      itemCount: _homeController.getPlayListItemsCount(),
+      itemCount: _songsController.getPlayListItemsCount(),
       itemBuilder: (BuildContext context, int position) =>
           _getWidgetByPos(position));
 }
@@ -131,7 +131,7 @@ Widget _getWidgetByPos(int position) {
       );
     case 1:
       return _createItem(
-        "assets/images/earth.png",
+        "assets/images/girl.png",
         "Be the girl",
         "Bebe Rexa",
       );
@@ -143,17 +143,11 @@ Widget _getWidgetByPos(int position) {
       );
     case 3:
       return _createItem(
-        "assets/images/lonelyness.png",
-        "Do yiu believe in Ionelyness",
-        "Marc Anthony",
-      );
-    case 4:
-      return _createItem(
         "assets/images/earth.png",
         "Earth song",
         "Micheal Jackson",
       );
-    case 5:
+    case 4:
       return _createItem(
         "assets/images/smooth.png",
         "Smooth criminal",
