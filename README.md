@@ -10,4 +10,6 @@ This project is a created base on this [UI repository](https://www.xdguru.com/mu
 
 You can see the designed pages below:
 
-
+| Home | Songs | Settings | Drawer |
+|  --- |  ---  |   ---    |   ---  |
+|<img src="screenshots/home.png" width="250">|<img src="screenshots/songs.png" width="250">|<img src="screenshots/settings.png" width="250">|<img src="screenshots/drawer.png" width="250">|
