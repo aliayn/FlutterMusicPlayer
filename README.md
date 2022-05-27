@@ -1,16 +1,13 @@
-# music_player
+# Flutter Musiz Player
 
-A new Flutter project.
+A sample UI of music player.
+
+[![Flutter version](https://img.shields.io/badge/flutter-3.1.0-blue?logo=flutter)](https://flutter.dev/docs/get-started/install)
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+This project is a created base on this [UI repository](https://www.xdguru.com/muzic-free-music-xd-ui-kit/).
 
-A few resources to get you started if this is your first Flutter project:
+You can see the designed pages below:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
